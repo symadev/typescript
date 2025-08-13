@@ -72,3 +72,32 @@ let employee: {
 
 //readonly means you cannot change the value of id
 // employee.id = 2; // Error: Cannot assign to 'id' because it is a read-only property.
+
+
+//advanced typescript example
+type Employee = {
+     readonly id: number;
+    name: string;
+   retire :( date:Date)=> void; }
+let employee2: Employee = {
+    id: 1,
+    name: 'John Doe',
+    retire: (date: Date) => {
+        console.log(date);
+    }
+} 
+
+//now we can use it in multiple places many times
+
+
+
+// union type example
+function kgToLbs(weight: number | string): number {
+    if (typeof weight === 'number') {
+        return weight * 2.2;
+    } else {
+        return parseInt(weight) * 2.2; //parseInt--> convert into integer
+    }
+}
+kgToLbs(10); // Output: 22
+kgToLbs('10kg'); // Output: 22
